@@ -45,7 +45,7 @@ namespace BlogWebApi.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
@@ -56,6 +56,8 @@ namespace BlogWebApi.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("TagId");
+
+                    b.HasIndex("Title");
 
                     b.HasIndex("UserId");
 

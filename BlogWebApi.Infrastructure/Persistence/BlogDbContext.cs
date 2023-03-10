@@ -51,6 +51,10 @@ namespace BlogWebApi.Infrastructure.Persistence
 
             builder.Entity<Comment>()
                 .HasQueryFilter(s => !s.IsDeleted);
+
+            // Indexes
+            builder.Entity<Blog>()
+                .HasIndex(s => new { s.Title });
         }
 
         public virtual DbSet<Blog> Blogs { get; set; }

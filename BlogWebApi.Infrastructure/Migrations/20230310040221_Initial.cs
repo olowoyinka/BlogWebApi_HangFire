@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlogWebApi.Infrastructure.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -243,6 +243,11 @@ namespace BlogWebApi.Infrastructure.Migrations
                 name: "IX_Blogs_TagId",
                 table: "Blogs",
                 column: "TagId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Blogs_Title",
+                table: "Blogs",
+                column: "Title");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Blogs_UserId",
